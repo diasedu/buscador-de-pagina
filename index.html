@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Preparos</title>
+
+    <style>
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" name="" id="input">
+
+    <div id ="lista">
+        <div class="item">
+            <h6 class="nome-exame">Audiometria</h6>
+            <p>é um dos exames complementares que irá trazer uma avaliação da acuidade auditiva do trabalhador, ou possíveis perdas na audição do colaborador. O exame complementar de audiometria é realizado em cabine de isolamento acústico. Este exame complementar é realizado aqui na Central Life à Av. Ipiranga, 318 - Bloco B, 3º Andar, Edifício Vila Normanda - República - SP, BR</p>
+        </div>
+
+        <div class="item">
+            <h6 class="nome-exame">Espirometria</h6>
+            <p>é um dos exames complementares, no qual fará a medição da quantidade de ar e a velocidade com que ele entra e sai dos pulmões quando o colaborador respira. Este exame complementar é realizado com o colaborador de pé e respirando pela boca. É fornecido ao colaborador um tubo onde é conectado ao aparelho medidor (espirômetro). Este exame complementar é realizado aqui na Central Life à Av. Ipiranga, 318 - Bloco B, 3º Andar, Edifício Vila Normanda - República - SP, BR</p>
+            
+        </div>
+
+        <div class="item">
+            <h6 class="nome-exame">Radiografias</h6>
+            <p>faz parte da lista dos exames complementares, os mais comuns e solicitados na Saúde Ocupacional são exames de Raios X do tórax e da coluna vertebral.</p>
+            
+        </div>
+
+        <div class="item">
+            <h6 class="nome-exame">Eletrocardiograma (ECG)</h6>
+            <p>é um dos exames complementares exigido pela Saúde Ocupacional.O ECG é o exame complementar realizado com o colaborador deitado e serão afixados na região do tórax eletrodos, que irão captar as batidas do coração e serão transmitidos para o aparelho (eletrocardiógrafo) que imprimirá um gráfico e será lido pelo médico. Este exame complementar é realizado aqui na Central Life à Av. Ipiranga, 318 - Bloco B, 3º Andar, Edifício Vila Normanda - República - SP, BR.</p>
+        </div>
+
+        <div class="item">
+            <h6 class="nome-exame">Eletroencefalograma (EEG)</h6>
+            <p>é o exame complementar que irá analisar a atividade elétrica cerebral espontânea, ou possíveis anormalidades no funcionamento cerebral. No EEG serão afixados os eletrodos no couro cabeludo do colaborador, esses eletrodos encaminham os sinais captados para um aparelho (eletroencefalógrafo) que imprimirá um gráfico e será analisado pelo médico. Este exame complementar é realizado aqui na Central Life à Av. Ipiranga, 318 - Bloco B, 3º Andar, Edifício Vila Normanda - República - SP, BR</p>
+        </div>
+    </div>
+
+    <script>
+
+        const input  = document.querySelector("#input");
+        const titles = document.querySelectorAll("h6");
+        const list   = document.querySelectorAll("item");
+
+        const matchDiv     = div => div.style.display = "block";
+        const invisibleDiv = div => div.style.display = "none";
+        
+        input.addEventListener("input", e => {
+
+
+            let inputed = e.target.value.toLowerCase();
+
+            titles.forEach(title => {
+                let txt = title.textContent.toLowerCase();
+
+                if(txt.includes(inputed)) {
+                    matchDiv(title.parentNode);
+                } else {
+                    invisibleDiv(title.parentNode);
+                }
+    
+
+            });
+        });
+
+    </script>
+</body>
+</html>
